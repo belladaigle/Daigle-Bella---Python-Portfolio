@@ -2124,9 +2124,9 @@ with open(input_file_name, "r") as input_file:
 rna_sequence = ""
 for nucleotide in dna_sequence:
     if nucleotide == "T":
-        rna_seqeunce +- "U"
+        rna_sequence += "U"
     else:
-        rna_sequence +- nucleotide
+        rna_sequence += nucleotide
 ```
 
 
@@ -2156,7 +2156,7 @@ with open(output_file_name, "w") as output_file:
 print(rna_sequence)
 ```
 
-    
+    AUGUCUGACGAAAAGAAGGGAGGUGAGACCGAGCACAUCAACCUGAAGGUCCUCGGCCAGGACAACGCCGUCGUCCAGUUCAAGAUCAAGAAGCACACACCCUUGAGGAAGCUGAUGAACGCCUACUGCGACCGUGCCGGACUCUCCAUGCAGGUGGUGCGCUUCCGUUUCGACGGACAGCCCAUCAACGAGAACGACACUCCGACCUCGCUGGAGAUGGAGGAGGGCGACACCAUCGAGGUUUACCAGCAGCAGACUGGUGGCGCUCCAUAAAUGUCUGACGAAAAGAAGGGAGGUGAGACCGAGCACAUCAACCUGAAGGUCCUCGGCCAGGACAACGCCGUCGUCCAGUUCAAGAUCAAGAAGCACACACCCUUGAGGAAGCUGAUGAACGCCUACUGCGACCGUGCCGGACUCUCCAUGCAGGUGGUGCGCUUCCGUUUCGACGGACAGCCCAUCAACGAGAACGACACUCCGACCUCGCUGGAGAUGGAGGAGGGCGACACCAUCGAGGUUUACCAGCAGCAGACUGGUGGCGCUCCAUAA
 
 
 
@@ -2173,20 +2173,21 @@ print(rna_sequence)
 ```python
 
 ```
+
 ## Translation
 ```python
 # Prompt the user to input RNA file name
 input_file_name = input("Enter the name of the input RNA file")
 ```
 
-    Enter the name of the input RNA file SUMO.txt
+    Enter the name of the input RNA file SUMO_rna.txt
 
 
 
 ```python
 # Open the RNA file and read the RNA sequence
 with open(input_file_name, "r") as input_file:
-    rna_sequence = input_file.read().strip
+    rna_sequence = input_file.read().strip()
 ```
 
 
@@ -2228,28 +2229,12 @@ for i in range(0, len(rna_sequence), 3):
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    TypeError                                 Traceback (most recent call last)
-
-    <ipython-input-10-9a92a531f184> in <module>
-          2 
-          3 protein_sequence = " "
-    ----> 4 for i in range(0, len(rna_sequence), 3):
-          5     codon = rna_sequence[i:i+3]
-          6     if len(codon) == 3:
-
-
-    TypeError: object of type 'builtin_function_or_method' has no len()
-
-
-
 ```python
 # Prompt the User to enter the output file name
 output_file_name = input("Enter the name of the output file: ")
 ```
 
-    Enter the name of the output file:  SUMO.txt
+    Enter the name of the output file:  protein_sequence.txt
 
 
 
@@ -2257,12 +2242,12 @@ output_file_name = input("Enter the name of the output file: ")
 #Save the protein sequence to a text file
 with open(output_file_name, "w") as output_file:
     output_file.write(protein_sequence)
-    print(f"The protein sequence hs been saved to (output_file_name)")
+    print(f"The protein sequence hs been saved to {output_file_name}")
 
 
 ```
 
-    The protein sequence hs been saved to (output_file_name)
+    The protein sequence hs been saved to protein_sequence.txt
 
 
 
@@ -2270,13 +2255,14 @@ with open(output_file_name, "w") as output_file:
 print(protein_sequence)
 ```
 
-     
+     MSDEKKGGETEHINLKVLGQDNAVVQFKIKKHTPLRKLMNAVCDRAGLSMQVVRFRFDGQPINENDTPTSLEMEEGDTIEVVQQQTGGAP
 
 
 
 ```python
 
 ```
+
 ## Using Jupyter Notebooks
 ```python
 %matplotlib inline
